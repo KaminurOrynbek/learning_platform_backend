@@ -13,7 +13,7 @@ app.use(express.json());
 
 app.use(
   cors({
-    origin: "https://KaminurOrynbek.github.io/LearningPlatform_frontend",
+    origin: "*",
     credentials: true,
   })
 );
