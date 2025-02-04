@@ -1,4 +1,3 @@
-// filepath: /Elearning/server/index.js
 import express from 'express';
 import dotenv from 'dotenv';
 import { connectDb } from './database/db.js';
@@ -11,9 +10,15 @@ const app = express();
 
 // using middlewares
 app.use(express.json());
-app.use(cors());
 
-const port = process.env.PORT;
+app.use(
+  cors({
+    origin: "https://KaminurOrynbek.github.io/LearningPlatform_frontend",
+    credentials: true,
+  })
+);
+
+const port = process.env.PORT || 5000;
 
 app.get('/', (req, res) => {
   res.send('Server is working');
